@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject ball;
+    bool _cpuPlayer = true;
     bool _isPlayerOne;
     float _movementSpeed = 1f;
     const float _LOWERLIMIT = -3.455f, _UPPERLIMIT = 3.455f;
@@ -17,8 +19,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _deltaPos = new Vector3(0, _movementSpeed * Input.GetAxis(_isPlayerOne ? "Player1" : "Player2"));
-        transform.Translate(_deltaPos);
+        if (_cpuPlayer == false || _isPlayerOne)
+        {
+            _deltaPos = new Vector3(0, _movementSpeed * Input.GetAxis(_isPlayerOne ? "Player1" : "Player2"));
+            transform.Translate(_deltaPos);
+        }
+        else if(!_isPlayerOne)
+        {
+            _deltaPos = Vector3.Lerp(ball.transform.position, gameObject.transform.position, 0.5f);
+            _deltaPos.x = transform.position.x;
+            transform.position = _deltaPos;
+        }
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, _LOWERLIMIT, _UPPERLIMIT), transform.position.z);
     }
 }
