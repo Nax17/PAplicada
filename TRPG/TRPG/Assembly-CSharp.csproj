@@ -63,11 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Essence\ScrollingController.cs" />
     <Compile Include="Assets\Scripts\PiraPong\BallBehavior.cs" />
     <Compile Include="Assets\Scripts\PiraPong\DeadZoneController.cs" />
-    <Compile Include="Assets\Scripts\PiraPong\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PiraPong\SoundManager.cs" />
     <Compile Include="Assets\Scripts\PiraPong\WebServiceClient.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/luis_/Documents/Aplicada/Yo/PAplicada/TRPG/TRPG/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

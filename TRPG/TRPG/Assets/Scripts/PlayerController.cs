@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public GameObject ball;
-    bool _cpuPlayer = true;
+    bool _cpuPlayer = false;
     bool _isPlayerOne;
     float _movementSpeed = 1f;
     const float _LOWERLIMIT = -3.455f, _UPPERLIMIT = 3.455f;
@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
             _deltaPos = new Vector3(0, _movementSpeed * Input.GetAxis(_isPlayerOne ? "Player1" : "Player2"));
             transform.Translate(_deltaPos);
         }
-        else if(!_isPlayerOne)
+        else if(!_isPlayerOne && ball != null)
         {
             _deltaPos = Vector3.Lerp(ball.transform.position, gameObject.transform.position, 0.5f);
             _deltaPos.x = transform.position.x;
