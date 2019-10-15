@@ -79,7 +79,7 @@ public class Group : MonoBehaviour
                 transform.Rotate(0, 0, 90);
         }
         // Fall
-        else if (Input.GetKeyDown(KeyCode.DownArrow) ||
+        else if (Input.GetKey(KeyCode.DownArrow) ||
          Time.time - lastFall >= 1)
         {
             // Modify position
