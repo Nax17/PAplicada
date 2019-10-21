@@ -10,6 +10,11 @@ public class PlayerController : MonoBehaviour
     float _movementSpeed = 1f;
     const float _LOWERLIMIT = -3.455f, _UPPERLIMIT = 3.455f;
     Vector3 _deltaPos;
+    Animator _animator;
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +27,10 @@ public class PlayerController : MonoBehaviour
         if (_cpuPlayer == false || _isPlayerOne)
         {
             _deltaPos = new Vector3(0, _movementSpeed * Input.GetAxis(_isPlayerOne ? "Player1" : "Player2"));
+            if(_animator != null)
+            {
+                _animator.SetFloat("SpeedY", _deltaPos.y);
+            }
             transform.Translate(_deltaPos);
         }
         else if(!_isPlayerOne && ball != null)

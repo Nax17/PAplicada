@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/PiraPong.unity
+- path: Assets/Scenes/Essence.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
