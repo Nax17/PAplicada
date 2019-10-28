@@ -17,7 +17,7 @@ public class ItemMovementBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _deltaPos = new Vector3(currentSpeedX * Time.deltaTime + (accelerationX * Mathf.Pow(Time.deltaTime,2) / 2), transform.position.y);
+        _deltaPos = new Vector3(currentSpeedX * Time.deltaTime + (accelerationX * Mathf.Pow(Time.deltaTime,2) / 2), 0f);
         currentSpeedX += accelerationX * Time.deltaTime;
         transform.Translate(_deltaPos);
     }
