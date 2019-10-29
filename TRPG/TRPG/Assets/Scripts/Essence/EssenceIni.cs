@@ -22,7 +22,7 @@ public class EssenceIni : MonoBehaviour
         }
         else
         {
-            _newObject = Essences[Random.Range(0, 5)];
+            _newObject = Essences[Random.Range(0, 4)];
         }
         Instantiate(_newObject, new Vector3(0, Random.Range(-4.5f, 4.5f)), Quaternion.identity);
         _trapRate *= 1.01f;

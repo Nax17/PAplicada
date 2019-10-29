@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Essence
   - Enemy
+  - Purple
+  - Blue
+  - Red
+  - Green
   layers:
   - Default
   - TransparentFX

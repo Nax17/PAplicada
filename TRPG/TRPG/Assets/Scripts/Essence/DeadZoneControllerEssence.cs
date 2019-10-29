@@ -6,7 +6,6 @@ public class DeadZoneControllerEssence : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name != "Player1")
-            Destroy(gameObject);
+        Destroy(other.gameObject);
     }
 }
